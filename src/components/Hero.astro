@@ -16,6 +16,7 @@ const base = '/portfolio-v2';
     <div class="gradient-orb orb-1"></div>
     <div class="gradient-orb orb-2"></div>
     <div class="gradient-orb orb-3"></div>
+    <div class="gradient-orb orb-4"></div>
   </div>
   <div class="hero-content container fade-in">
     <p class="hero-greeting">{lang === 'es' ? 'Hola, soy' : 'Hi, I am'}</p>
@@ -54,47 +55,127 @@ const base = '/portfolio-v2';
     position: absolute;
     inset: 0;
     z-index: 0;
+    overflow: hidden;
+  }
+
+  /* Grid mesh overlay */
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(124, 58, 237, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(124, 58, 237, 0.06) 1px, transparent 1px);
+    background-size: 50px 50px;
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    animation: gridGlow 6s ease-in-out infinite alternate;
+  }
+
+  /* Rotating gradient ring sweep */
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg,
+      transparent 0deg,
+      rgba(124, 58, 237, 0.04) 90deg,
+      transparent 180deg,
+      rgba(6, 182, 212, 0.04) 270deg,
+      transparent 360deg);
+    animation: rotateSweep 40s linear infinite;
   }
 
   .gradient-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.4;
+    filter: blur(100px);
+    will-change: transform;
   }
 
   .orb-1 {
-    width: 500px;
-    height: 500px;
+    width: 650px;
+    height: 650px;
     background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
-    top: -10%;
-    left: -10%;
-    animation: float 20s ease-in-out infinite;
+    top: -15%;
+    left: -5%;
+    opacity: 0.45;
+    animation: orbFloat1 25s ease-in-out infinite;
   }
 
   .orb-2 {
-    width: 400px;
-    height: 400px;
+    width: 550px;
+    height: 550px;
     background: radial-gradient(circle, var(--color-secondary) 0%, transparent 70%);
-    bottom: -10%;
-    right: -10%;
-    animation: float 25s ease-in-out infinite reverse;
+    bottom: -15%;
+    right: -5%;
+    opacity: 0.35;
+    animation: orbFloat2 30s ease-in-out infinite;
   }
 
   .orb-3 {
-    width: 300px;
-    height: 300px;
+    width: 380px;
+    height: 380px;
     background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
-    top: 50%;
-    right: 30%;
-    animation: float 15s ease-in-out infinite;
-    opacity: 0.2;
+    top: 35%;
+    left: 10%;
+    opacity: 0.15;
+    animation: orbFloat3 20s ease-in-out infinite;
   }
 
-  @keyframes float {
+  .orb-4 {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, var(--color-accent-secondary) 0%, transparent 70%);
+    top: 15%;
+    right: 15%;
+    opacity: 0.1;
+    animation: orbFloat4 22s ease-in-out infinite;
+  }
+
+  /* Vignette overlay */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 35%, rgba(15, 15, 26, 0.5) 100%);
+  }
+
+  @keyframes gridGlow {
+    0%   { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes rotateSweep {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @keyframes orbFloat1 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -30px) scale(1.05); }
-    66% { transform: translate(-20px, 20px) scale(0.95); }
+    33%  { transform: translate(50px, -50px) scale(1.08); }
+    66%  { transform: translate(-30px, 40px) scale(0.92); }
+  }
+
+  @keyframes orbFloat2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%  { transform: translate(-50px, 40px) scale(0.92); }
+    66%  { transform: translate(40px, -40px) scale(1.08); }
+  }
+
+  @keyframes orbFloat3 {
+    0%, 100% { transform: translate(0, 0); }
+    50%  { transform: translate(30px, 25px); }
+  }
+
+  @keyframes orbFloat4 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(-25px, -20px) scale(1.15); }
   }
 
   .hero-content {
