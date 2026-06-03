@@ -210,3 +210,29 @@ const base = '/portfolio-selene';
     }
   }
 </style>
+
+<script>
+  // Force download for PDF (GitHub Pages serves PDF inline by default)
+  document.querySelectorAll('.cv-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const url = btn.getAttribute('href');
+      if (!url) return;
+      try {
+        const resp = await fetch(url);
+        const blob = await resp.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = 'CV_Selene_Garcia_Chacon.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(blobUrl);
+      } catch {
+        // fallback: let browser handle it normally
+        window.location.href = url;
+      }
+    });
+  });
+</script>
