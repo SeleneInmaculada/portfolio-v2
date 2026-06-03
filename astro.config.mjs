@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://seleneinmaculada.github.io',
-  base: '/portfolio-v2/',
+  base: '/portfolio-selene/',
   output: 'static',
   integrations: [sitemap()],
 });

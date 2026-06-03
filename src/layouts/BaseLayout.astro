@@ -14,9 +14,9 @@ const { title, description } = Astro.props;
 const url = Astro.props.currentUrl || Astro.url;
 const lang: Lang = getLangFromUrl(url);
 const t = useTranslations(lang);
-const base = '/portfolio-v2';
+const base = '/portfolio-selene';
 
-const canonicalUrl = `https://seleneinmaculada.github.io/portfolio-v2${url.pathname.replace(/\/portfolio-v2/, '')}`;
+const canonicalUrl = `https://seleneinmaculada.github.io/portfolio-selene${url.pathname.replace(/\/portfolio-selene/, '')}`;
 const ogTitle = title || t.seo.title;
 const ogDescription = description || t.seo.description;
 ---
