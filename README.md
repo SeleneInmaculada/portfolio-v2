@@ -1,4 +1,4 @@
-# Portfolio — Selene Garcia Chacon
+# Portfolio — Selene Inmaculada García Chacón
 
 [![Deploy](https://github.com/SeleneInmaculada/portfolio-selene/actions/workflows/deploy.yml/badge.svg)](https://github.com/SeleneInmaculada/portfolio-selene/actions/workflows/deploy.yml)
 [![Live](https://img.shields.io/badge/Live-Portfolio-blueviolet)](https://seleneinmaculada.github.io/portfolio-selene/)
@@ -68,4 +68,4 @@ npm run preview   # Serves /dist locally
 
 ---
 
-Built by Selene Garcia Chacon
+Built by Selene Inmaculada García Chacón

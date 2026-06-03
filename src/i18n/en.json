@@ -8,7 +8,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "name": "Selene García Chacón",
+    "name": "Selene Inmaculada García Chacón",
     "title": "Web Developer · Video Games · AI",
     "tagline": "Building solutions where technology makes sense",
     "cta": "About Me",
@@ -187,12 +187,12 @@
     }
   },
   "footer": {
-    "copyright": "© 2026 Selene García Chacón. All rights reserved.",
+    "copyright": "© 2026 Selene Inmaculada García Chacón. All rights reserved.",
     "built_with": "Built with Astro"
   },
   "seo": {
-    "title": "Selene García Chacón — Web Developer · Video Games · AI",
-    "description": "Portfolio of Selene García Chacón. Web Developer specialized in Applied Artificial Intelligence and Video Games. Projects in AI, web development, and game development.",
+    "title": "Selene Inmaculada García Chacón — Web Developer · Video Games · AI",
+    "description": "Portfolio of Selene Inmaculada García Chacón. Web Developer specialized in Applied Artificial Intelligence and Video Games. Projects in AI, web development, and game development.",
     "keywords": "web developer, AI, artificial intelligence, portfolio, video games, Unity, React, FastAPI, RAG, Toledo"
   }
 }

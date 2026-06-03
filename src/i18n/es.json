@@ -8,7 +8,7 @@
     "contact": "Contacto"
   },
   "hero": {
-    "name": "Selene García Chacón",
+    "name": "Selene Inmaculada García Chacón",
     "title": "Desarrolladora Web · Videojuegos · IA",
     "tagline": "Creando soluciones donde la tecnología cobra sentido",
     "cta": "Conóceme",
@@ -187,12 +187,12 @@
     }
   },
   "footer": {
-    "copyright": "© 2026 Selene García Chacón. Todos los derechos reservados.",
+    "copyright": "© 2026 Selene Inmaculada García Chacón. Todos los derechos reservados.",
     "built_with": "Hecho con Astro"
   },
   "seo": {
-    "title": "Selene García Chacón — Desarrolladora Web · Videojuegos · IA",
-    "description": "Portfolio de Selene García Chacón. Desarrolladora Web con especialización en Inteligencia Artificial Aplicada y Videojuegos. Proyectos en IA, web y game development.",
+    "title": "Selene Inmaculada García Chacón — Desarrolladora Web · Videojuegos · IA",
+    "description": "Portfolio de Selene Inmaculada García Chacón. Desarrolladora Web con especialización en Inteligencia Artificial Aplicada y Videojuegos. Proyectos en IA, web y game development.",
     "keywords": "desarrolladora web, IA, inteligencia artificial, portfolio, videojuegos, Unity, React, FastAPI, RAG, Toledo"
   }
 }
