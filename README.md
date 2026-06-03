@@ -1,7 +1,7 @@
-# Portfolio v2 — Selene Garcia Chacon
+# Portfolio — Selene Garcia Chacon
 
-[![Deploy](https://github.com/seleneinmaculada/portfolio-v2/actions/workflows/deploy.yml/badge.svg)](https://github.com/seleneinmaculada/portfolio-v2/actions/workflows/deploy.yml)
-[![Live](https://img.shields.io/badge/Live-Portfolio-blueviolet)](https://seleneinmaculada.github.io/portfolio-v2/)
+[![Deploy](https://github.com/SeleneInmaculada/portfolio-selene/actions/workflows/deploy.yml/badge.svg)](https://github.com/SeleneInmaculada/portfolio-selene/actions/workflows/deploy.yml)
+[![Live](https://img.shields.io/badge/Live-Portfolio-blueviolet)](https://seleneinmaculada.github.io/portfolio-selene/)
 
 Bilingual (ES/EN) personal portfolio built with **Astro**, deployed on **GitHub Pages**.
 
@@ -43,7 +43,7 @@ src/
 
 ```bash
 npm install
-npm run dev       # http://localhost:4321/portfolio-v2/
+npm run dev       # http://localhost:4321/portfolio-selene/
 npm run build     # Generates /dist
 npm run preview   # Serves /dist locally
 ```
