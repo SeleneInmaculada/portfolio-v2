@@ -52,6 +52,22 @@ const t = useTranslations(lang);
 </section>
 
 <style>
+  .education {
+    position: relative;
+  }
+
+  .education::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
   .edu-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -72,7 +88,8 @@ const t = useTranslations(lang);
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-accent), var(--color-pink));
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.2);
   }
 
   .timeline-item {
@@ -94,31 +111,41 @@ const t = useTranslations(lang);
     border-radius: 50%;
     background: var(--color-primary);
     border: 3px solid var(--bg-primary);
-    box-shadow: 0 0 0 2px var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary), 0 0 12px rgba(139, 92, 246, 0.4);
+    animation: dotGlow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes dotGlow {
+    0%   { box-shadow: 0 0 0 2px var(--color-primary), 0 0 8px rgba(139, 92, 246, 0.3); }
+    100% { box-shadow: 0 0 0 2px var(--color-primary), 0 0 16px rgba(139, 92, 246, 0.6); }
   }
 
   .timeline-content {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-md);
     padding: 20px 24px;
     transition: var(--transition);
   }
 
   .timeline-content:hover {
-    border-color: var(--color-primary);
+    border-color: rgba(139, 92, 246, 0.25);
     box-shadow: var(--shadow-glow);
+    transform: translateX(4px);
   }
 
   .timeline-year {
     display: inline-block;
-    padding: 2px 12px;
+    padding: 3px 14px;
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 700;
     color: white;
     margin-bottom: 8px;
+    letter-spacing: 0.5px;
   }
 
   .timeline-title {
@@ -129,7 +156,7 @@ const t = useTranslations(lang);
   }
 
   .timeline-subtitle {
-    color: var(--color-primary-light);
+    color: var(--color-primary-bright);
     font-size: 0.9rem;
     margin-bottom: 4px;
   }
@@ -147,10 +174,18 @@ const t = useTranslations(lang);
   }
 
   .edu-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
     padding: 24px;
+    transition: var(--transition);
+  }
+
+  .edu-card:hover {
+    border-color: rgba(139, 92, 246, 0.2);
+    box-shadow: var(--shadow-glow);
   }
 
   .edu-card-title {
@@ -164,7 +199,7 @@ const t = useTranslations(lang);
   }
 
   .edu-card-title i {
-    color: var(--color-primary-light);
+    color: var(--color-primary-bright);
   }
 
   .edu-list {
@@ -180,6 +215,13 @@ const t = useTranslations(lang);
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: var(--transition);
+    padding: 4px 0;
+  }
+
+  .edu-list li:hover {
+    color: var(--text-primary);
+    transform: translateX(4px);
   }
 
   .edu-list li i {

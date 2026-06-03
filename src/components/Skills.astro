@@ -42,6 +42,22 @@ const iconMap: Record<string, string> = {
 </section>
 
 <style>
+  .skills {
+    position: relative;
+  }
+
+  .skills::before {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    left: -8%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -49,28 +65,66 @@ const iconMap: Record<string, string> = {
   }
 
   .skill-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
     padding: 28px;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+      rgba(139, 92, 246, 0.02),
+      rgba(34, 211, 238, 0.02));
+    pointer-events: none;
+  }
+
+  .skill-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
 
   .skill-card:hover {
-    border-color: var(--color-primary);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-glow);
+    border-color: rgba(139, 92, 246, 0.25);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow-strong);
+  }
+
+  .skill-card:hover::after {
+    opacity: 1;
   }
 
   .skill-icon {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     border-radius: var(--radius-md);
     margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    animation: iconPulse 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes iconPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.2); }
+    100% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
   }
 
   .skill-icon i {
@@ -83,18 +137,22 @@ const iconMap: Record<string, string> = {
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
   }
 
   .skill-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    position: relative;
+    z-index: 1;
   }
 
   .skill-tag {
-    padding: 4px 12px;
-    background: rgba(124, 58, 237, 0.1);
-    border: 1px solid rgba(124, 58, 237, 0.2);
+    padding: 5px 14px;
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.15);
     border-radius: 50px;
     font-size: 0.8rem;
     color: var(--text-secondary);
@@ -102,8 +160,10 @@ const iconMap: Record<string, string> = {
   }
 
   .skill-tag:hover {
-    background: rgba(124, 58, 237, 0.2);
-    color: var(--color-primary-light);
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--color-primary-bright);
     border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
   }
 </style>
